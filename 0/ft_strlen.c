@@ -6,7 +6,7 @@
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 10:58:55 by sajimene          #+#    #+#             */
-/*   Updated: 2023/03/23 11:03:34 by sajimene         ###   ########.fr       */
+/*   Updated: 2023/06/26 10:03:59 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 int	ft_strlen(char *str)
 {
-	int i;
+	int	i = 0;
 
-	i = 0;
-	while (str[i] != '\0')
+	while (str[i])
 		i++;
 	return (i);
 }

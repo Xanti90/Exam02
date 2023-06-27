@@ -6,7 +6,7 @@
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 12:38:01 by sajimene          #+#    #+#             */
-/*   Updated: 2023/03/23 12:38:52 by sajimene         ###   ########.fr       */
+/*   Updated: 2023/05/23 11:49:17 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,18 @@
 
 int main(int ac, char **av)
 {
-	
+	int	i;
+
+	i = 0;
+	if (ac == 2)
+	{
+		while (av[1][i] != '\0')
+			i++;
+		while (i >= 1)
+		{
+			write (1, &av[1][i -1], 1);
+			i--;
+		}
+	}
+	write (1, "\n", 1);
 }

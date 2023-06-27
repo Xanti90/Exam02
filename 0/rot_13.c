@@ -6,28 +6,29 @@
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 10:59:36 by sajimene          #+#    #+#             */
-/*   Updated: 2023/04/18 11:26:16 by sajimene         ###   ########.fr       */
+/*   Updated: 2023/06/27 11:46:09 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int main(int ac, char **av)
+void	rot_13(char *str)
 {
-	int	i;
+	int i;
 
 	i = 0;
-	if (ac == 2)
-	{
-		while(av[1][i] != '\0')
-		{
-			if ((av[1][i] >= 'a' && av[1][i] <= 'm') || (av[1][i] >= 'A' && av[1][i] <= 'M'))
-				av[1][i] = av[1][i] + 13;
-			else if ((av[1][i] >= 'n' && av[1][i] <= 'z') || (av[1][i] >= 'N' && av[1][i] <= 'Z'))
-				av[1][i] = av[1][i] - 13;
-			write(1, &av[1][i], 1);
-			i++;
-		}
-	}
+	while ((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <= 'M'))
+		str[i] = str[i] + 13;
+	while ((str[i] >= 'n' && str[i] <= 'z') || (str[i] >= 'N' && str[i] <= 'z'))
+		str[i] = str[i] - 13;
+	write(1, &str[i], 1);
+	i++;
+}
+
+int main(int argc, char **argv)
+{
+	if (argc == 2)
+		rot_13(argv[1]);
 	write(1, "\n", 1);
+	return (0);
 }

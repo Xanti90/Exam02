@@ -6,37 +6,42 @@
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 11:04:18 by sajimene          #+#    #+#             */
-/*   Updated: 2023/03/23 11:32:03 by sajimene         ###   ########.fr       */
+/*   Updated: 2023/06/26 12:19:10 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	main(int ac, char **av)
+void	ft_putstr(char c, int i)
 {
-	int i;
-	int k;
-	char *str;
+	while (i >= 0)
+	{
+		write (1, &c, 1);
+		i--;
+	}
+}
+
+void	repeat_alpha(char *str)
+{
+	int	i,
 
 	i = 0;
-	k = 1;
-	if(ac == 2)
+	while (str[i] != '\0')
 	{
-		str = av[1];
-		while (str[i] != '\0')
-		{
-			if (str[i] >= 'A' && str[i] <= 'Z')
-				k = str[i] - 64;
-			if (str[i] >= 'a' && str[i] <= 'z')
-				k = str[i] - 96;
-			while (k >= 1)
-			{
-				write(1, &str[i], 1);
-				k--;
-			}
-			i++;
-		}
+		if (str[i] >= 'a' && str[i] <= 'Z')
+			ft_putstr(str[1], str[1] - 'a');
+		else if (str[i] >= 'A' && str[i] <= 'Z')
+			ft_putstr(str[i], str[i] - 'A');
+		else
+			write(1, &str[i], 1);
+		i++;
 	}
-	write(1, "\n", 1);
-	return(0);
+}
+
+int	main(int argc, char **argv)
+{
+	if (argc == 2)
+		repeat_alpha(argv[1]);
+	write (1, "\n", 1);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 11:01:19 by sajimene          #+#    #+#             */
-/*   Updated: 2023/03/23 11:02:55 by sajimene         ###   ########.fr       */
+/*   Updated: 2023/06/22 17:49:47 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,12 @@ void	ft_swap( int *a, int *b)
 	*a = *b;
 	*b = tmp;
 }
+
+ void ft_swap(int *a, int *b)
+ {
+	int tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+ }

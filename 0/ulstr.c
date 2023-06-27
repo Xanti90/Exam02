@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ulstr.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/23 10:50:44 by sajimene          #+#    #+#             */
-/*   Updated: 2023/06/26 15:07:13 by sajimene         ###   ########.fr       */
+/*   Created: 2023/06/26 14:38:43 by sajimene          #+#    #+#             */
+/*   Updated: 2023/06/26 14:52:02 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char	*ft_strcpy(char *s1, char *s2)
+void	ulstr(char *str)
 {
-	int	i;
+	int i;
 
 	i = 0;
-	while (s2[i] != '\0')
+	while (str[i] != '\0')
 	{
-		s1[i] = s2[i];
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += 32;
+		else if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] -= 32;
+		write (1, &str[i], 1);
 		i++;
 	}
-	s1[i] != '\0';
-	return (s1);
+}
+
+int main(int argc, char **argv)
+{
+	if (argc == 2)
+	{
+			ulsrt(argv[1]);
+		write (1, "\n", 1);
+		return (0);
+	}
 }

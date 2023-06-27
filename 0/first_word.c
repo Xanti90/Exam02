@@ -6,35 +6,33 @@
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:48:08 by sajimene          #+#    #+#             */
-/*   Updated: 2023/03/23 09:35:25 by sajimene         ###   ########.fr       */
+/*   Updated: 2023/06/27 11:46:37 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	first_word(char *str)
 {
-	write(1, &c, 1);
-}
-
-int	main(int ac, char **av)
-{
-	int i;
-
+	int	i;
 
 	i = 0;
-	if(ac == 2)
+	while (str[i] == ' ' || str[i] == '\t')
+		i++;
+	while (str[i] != '\0' && str[i] != ' ' && str[i] != '\t')
 	{
-		while (av[1][i] == ' ' || av[1][i] == '\t')
-		{
-			i++;
-		}
-		while (av[1][i] != '\0' && av[1][i] != ' ' && av[1][i] != '\t')
-		{
-			ft_putchar(av[1][i]);
-			i++;
-		}
+		write(1, &str[i], 1);
+		i++;
 	}
-	ft_putchar('\n');
+}
+
+int	main(int argc, char **argv)
+{
+	int	i;
+
+	i = 0;
+	if (argc == 2)
+		first_word(argv[1]);
+	write(1, "\n", 1);
 	return (0);
 }

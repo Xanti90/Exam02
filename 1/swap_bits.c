@@ -1,27 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   swap_bits.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/23 10:50:44 by sajimene          #+#    #+#             */
-/*   Updated: 2023/06/26 15:07:13 by sajimene         ###   ########.fr       */
+/*   Created: 2023/06/22 17:51:45 by sajimene          #+#    #+#             */
+/*   Updated: 2023/06/22 17:51:45 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-char	*ft_strcpy(char *s1, char *s2)
+unsigned char	swap_bits(unsigned char octet)
 {
-	int	i;
-
-	i = 0;
-	while (s2[i] != '\0')
-	{
-		s1[i] = s2[i];
-		i++;
-	}
-	s1[i] != '\0';
-	return (s1);
+	return ((octet >> 4) | (octet << 4));
 }
