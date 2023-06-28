@@ -1,16 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_bits.c                                        :+:      :+:    :+:   */
+/*   alpha_mirror.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/22 17:51:45 by sajimene          #+#    #+#             */
-/*   Updated: 2023/06/27 15:08:42 by sajimene         ###   ########.fr       */
+/*   Created: 2023/06/28 09:29:04 by sajimene          #+#    #+#             */
+/*   Updated: 2023/06/28 10:10:08 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned char	swap_bits(unsigned char octet)
+#include <unistd.h>
+
+void	alpha_mirror(char *str)
 {
-	return ((octet >> 4) + (octet << 4));
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] = 'z' - str[i] + 'a';
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] = 'Z' - str[i] + 'A';
+		write (1, &str[i], 1);
+		i++;
+	}
+
+}
+
+int main(int argc, char **argv)
+{
+	if (argc == 2)
+		alpha_mirror(argv[1]);
+	write (1, "\n", 1);
+	return (0);
 }
