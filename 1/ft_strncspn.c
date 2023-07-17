@@ -1,23 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_strncspn.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/23 11:01:19 by sajimene          #+#    #+#             */
-/*   Updated: 2023/06/29 09:27:45 by sajimene         ###   ########.fr       */
+/*   Created: 2023/07/11 12:03:21 by sajimene          #+#    #+#             */
+/*   Updated: 2023/07/12 10:49:53 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdio.h>
+#include <string.h>
 
-void	ft_swap( int *a, int *b)
-{
-	int tmp;
 
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
-}
+

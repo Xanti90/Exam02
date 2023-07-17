@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rot_13.c                                           :+:      :+:    :+:   */
+/*   do_op.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/18 10:59:36 by sajimene          #+#    #+#             */
-/*   Updated: 2023/07/06 10:09:05 by sajimene         ###   ########.fr       */
+/*   Created: 2023/06/30 08:39:30 by sajimene          #+#    #+#             */
+/*   Updated: 2023/06/30 09:35:55 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-void	rot_13(char *str)
+void	do_op(int n1, char ope, int n2)
 {
-	int i;
+	int result;
 
-	i = 0;
-	while(str[i] != '\0')
-	if ((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <= 'M'))
-		str[i] = str[i] + 13;
-	else if ((str[i] >= 'n' && str[i] <= 'z') || (str[i] >= 'N' && str[i] <= 'z'))
-		str[i] = str[i] - 13;
-	write(1, &str[i], 1);
-	i++;
+	result = 0;
+	if (ope == '+')
+		result = n1 + n2;
+	else if (ope == '-')
+		result = n1 - n2;
+	else if (ope == '*')
+		result = n1 * n2;
+	else if (ope == '/')
+		result = n1 / n2;
+	else if (ope == '%')
+		result = n1 % n2;
+	printf("%d", result);
 }
 
 int main(int argc, char **argv)
 {
-	if (argc == 2)
-		rot_13(argv[1]);
-	write(1, "\n", 1);
+	if (argc == 4)
+		do_op(atoi(argv[1]), *argv[1], atoi(argv[1]));
+	printf("\n");
 	return (0);
 }

@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rot_13.c                                           :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/18 10:59:36 by sajimene          #+#    #+#             */
-/*   Updated: 2023/07/06 10:09:05 by sajimene         ###   ########.fr       */
+/*   Created: 2023/06/30 12:17:43 by sajimene          #+#    #+#             */
+/*   Updated: 2023/06/30 13:09:03 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	rot_13(char *str)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int i;
 
 	i = 0;
-	while(str[i] != '\0')
-	if ((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <= 'M'))
-		str[i] = str[i] + 13;
-	else if ((str[i] >= 'n' && str[i] <= 'z') || (str[i] >= 'N' && str[i] <= 'z'))
-		str[i] = str[i] - 13;
-	write(1, &str[i], 1);
-	i++;
-}
-
-int main(int argc, char **argv)
-{
-	if (argc == 2)
-		rot_13(argv[1]);
-	write(1, "\n", 1);
-	return (0);
+	while (s1[i] != '\0' && )
 }
