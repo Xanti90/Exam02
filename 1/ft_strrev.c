@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rev_print.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/23 12:38:01 by sajimene          #+#    #+#             */
-/*   Updated: 2023/07/19 15:56:36 by sajimene         ###   ########.fr       */
+/*   Created: 2023/07/19 17:13:53 by sajimene          #+#    #+#             */
+/*   Updated: 2023/07/19 17:18:02 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	rev_print(char *str)
+char	*ft_strrev(char *str)
 {
-	int	i;
+	int i;
+	int j;
+	int aux;
+
 
 	i = 0;
+	j = 0;
+	aux = 0;
 	while (str[i] != '\0')
-		i++;
+			i++;
 	i--;
-	while (i >= 0)
+	while (i > j)
 	{
-		write(1, &str[i], 1);
+		aux = str[i];
+		str[i] = str[j];
+		str[j] = aux;
 		i--;
+		j++;
 	}
-}
-
-int	main(int argc, char **argv)
-{
-	if (argc == 2)
-		rev_print(argv[1]);
-	write(1, "\n", 1);
-	return (0);
+	return (str);
 }

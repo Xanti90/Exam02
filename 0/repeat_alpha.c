@@ -6,7 +6,7 @@
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 11:04:18 by sajimene          #+#    #+#             */
-/*   Updated: 2023/06/26 12:19:10 by sajimene         ###   ########.fr       */
+/*   Updated: 2023/07/19 15:52:18 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	repeat_alpha(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] >= 'a' && str[i] <= 'Z')
-			ft_putstr(str[1], str[1] - 'a');
+		if (str[i] >= 'a' && str[i] <= 'z')
+			ft_putstr(str[i], str[i] - 'a');
 		else if (str[i] >= 'A' && str[i] <= 'Z')
 			ft_putstr(str[i], str[i] - 'A');
 		else

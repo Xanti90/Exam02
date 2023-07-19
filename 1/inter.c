@@ -1,36 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rev_print.c                                        :+:      :+:    :+:   */
+/*   inter.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/23 12:38:01 by sajimene          #+#    #+#             */
-/*   Updated: 2023/07/19 15:56:36 by sajimene         ###   ########.fr       */
+/*   Created: 2023/07/19 17:19:18 by sajimene          #+#    #+#             */
+/*   Updated: 2023/07/19 17:26:26 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	rev_print(char *str)
+void	inter(char *s1, char *s2)
 {
-	int	i;
+	int i;
+	int j;
+	int k;
 
 	i = 0;
-	while (str[i] != '\0')
-		i++;
-	i--;
-	while (i >= 0)
+	j = 0;
+	k = 0;
+	while (s1[i] != '\0')
 	{
-		write(1, &str[i], 1);
-		i--;
+		j = 0;
+		while (s2[j] != '\0')
+		{
+			while (s1[i] == s2[i])
+			{
+				k = 0;
+				while (s1[k] != s1[i])
+					k++;
+				if (k == i)
+				{
+					k = 0;
+					while (s2[k] != s2[j])
+						k++;
+					if (k == j)
+							write(1, &s1[i], 1);
+				}
+			}
+			j++;
+		}
 	}
-}
-
-int	main(int argc, char **argv)
-{
-	if (argc == 2)
-		rev_print(argv[1]);
-	write(1, "\n", 1);
-	return (0);
+		i++;
 }

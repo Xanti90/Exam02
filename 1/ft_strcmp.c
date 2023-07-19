@@ -6,7 +6,7 @@
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 12:17:43 by sajimene          #+#    #+#             */
-/*   Updated: 2023/06/30 13:09:03 by sajimene         ###   ########.fr       */
+/*   Updated: 2023/07/19 15:17:21 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,16 @@ int	ft_strcmp(char *s1, char *s2)
 	int i;
 
 	i = 0;
-	while (s1[i] != '\0' && )
+	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
+}
+
+int main()
+{
+	char s1[] = "hola";
+	char s2[] = "holo";
+
+	printf("%d", ft_strcmp(s1, s2));
+	return (0);
 }

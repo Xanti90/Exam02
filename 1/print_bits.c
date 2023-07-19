@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rev_print.c                                        :+:      :+:    :+:   */
+/*   print_bits.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/23 12:38:01 by sajimene          #+#    #+#             */
-/*   Updated: 2023/07/19 15:56:36 by sajimene         ###   ########.fr       */
+/*   Created: 2023/07/19 13:09:47 by sajimene          #+#    #+#             */
+/*   Updated: 2023/07/19 15:11:17 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	rev_print(char *str)
+void	print_bits(unsigned char octec)
 {
-	int	i;
+	int i;
+	unsigned char bit;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	i--;
-	while (i >= 0)
+	i = 8;
+	while (i--)
 	{
-		write(1, &str[i], 1);
-		i--;
+		bit = ((octec >> i) & 1) + '0';
+		write(1, &bit, 1);
 	}
-}
-
-int	main(int argc, char **argv)
-{
-	if (argc == 2)
-		rev_print(argv[1]);
-	write(1, "\n", 1);
-	return (0);
 }

@@ -1,35 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rot_13.c                                           :+:      :+:    :+:   */
+/*   union.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/18 10:59:36 by sajimene          #+#    #+#             */
-/*   Updated: 2023/07/19 16:00:03 by sajimene         ###   ########.fr       */
+/*   Created: 2023/07/19 17:31:22 by sajimene          #+#    #+#             */
+/*   Updated: 2023/07/19 17:50:11 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	rot_13(char *str)
+int check(char c, char *str, int k)
 {
 	int i;
 
 	i = 0;
-	while(str[i] != '\0')
-	if ((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <= 'M'))
-		str[i] = str[i] + 13;
-	else if ((str[i] >= 'n' && str[i] <= 'z') || (str[i] >= 'N' && str[i] <= 'Z'))
-		str[i] = str[i] - 13;
-	write(1, &str[i], 1);
-	i++;
+	while (i > k)
+	{
+		if (str[i] == c)
+				return (0);
+		i++;
+	}
+	return (1);
 }
 
+void ft_union(char *s1, char *s2)
+{
+	int i;
+	int j;
+	int k;
+
+	i = 0;
+	j = 0;
+	k = 0;
+	while (s1[i] != '\0')
+		i++;
+	while (s2[j] != '\0')
+	{
+		s1[i] = s2[j];
+		i++;
+		j++;
+	}
+	while (k <= i)
+	{
+		if (check(s1[k], s1, k) == 1)
+			write(1, &s1[k], 1);
+		k++;
+	}
+}
 int main(int argc, char **argv)
 {
-	if (argc == 2)
-		rot_13(argv[1]);
-	write(1, "\n", 1);
+	if (argc == 3)
+		ft_union(argv[1], argv[2]);
+	write( 1, "\n", 1);
 	return (0);
 }

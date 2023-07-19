@@ -1,36 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rev_print.c                                        :+:      :+:    :+:   */
+/*   ft_strpbrk.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/23 12:38:01 by sajimene          #+#    #+#             */
-/*   Updated: 2023/07/19 15:56:36 by sajimene         ###   ########.fr       */
+/*   Created: 2023/07/19 17:07:05 by sajimene          #+#    #+#             */
+/*   Updated: 2023/07/19 17:13:27 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
 
-void	rev_print(char *str)
+char	*ft_strpbrk(const char *s1, const char *s2)
 {
-	int	i;
+	int i;
+	int j;
 
 	i = 0;
-	while (str[i] != '\0')
-		i++;
-	i--;
-	while (i >= 0)
+	j = 0;
+	while (s1[i] != '\0')
 	{
-		write(1, &str[i], 1);
-		i--;
+		j = 0;
+		while (s2[j] != '\0')
+		{
+			if (s1[i] == s2[j])
+					return ((char *) &s1[i]);
+			j++;
+		}
+		i++;
 	}
-}
-
-int	main(int argc, char **argv)
-{
-	if (argc == 2)
-		rev_print(argv[1]);
-	write(1, "\n", 1);
 	return (0);
 }
+
+/*int main(void)
+{
+	char s1[] = "hola caracola";
+	char s2[] = "r";
+
+	printf("%s\n", strpbrk(s1, s2));
+	printf("%s", ft_strpbrk(s1, s2));
+
+	return (0);
+}*/
