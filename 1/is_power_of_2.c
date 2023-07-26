@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotone.c                                           :+:      :+:    :+:   */
+/*   is_power_of_2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/23 11:57:36 by sajimene          #+#    #+#             */
-/*   Updated: 2023/07/20 13:12:00 by sajimene         ###   ########.fr       */
+/*   Created: 2023/07/26 15:14:55 by sajimene          #+#    #+#             */
+/*   Updated: 2023/07/26 15:24:46 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	rotone(char *str)
+int	    is_power_of_2(unsigned int n)
 {
-	int	i;
+	unsigned int aux;
 
-	i = 0;
-	while (str[i] != '\0')
+	aux = 1;
+	while (aux <= n)
 	{
-		if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
-		{
-			if (str[i] == 'z' || str[i] == 'Z')
-					str[i] = str[i] - 26;
-				str[i] = str[i] + 1;
-		}
-		write(1, &str[i], 1);
-		i++;
+		if (aux == n)
+			return (1);
+		aux = aux * 2;
 	}
-}
-
-int main(int argc, char **argv)
-{
-	if (argc == 2)
-		rotone(argv[1]);
-	write(1, "\n", 1);
 	return (0);
 }

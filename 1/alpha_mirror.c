@@ -6,7 +6,7 @@
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 09:29:04 by sajimene          #+#    #+#             */
-/*   Updated: 2023/06/28 10:10:08 by sajimene         ###   ########.fr       */
+/*   Updated: 2023/07/24 15:49:39 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	alpha_mirror(char *str)
 	while (str[i] != '\0')
 	{
 		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] = 'z' - str[i] + 'a';
+			str[i] = 'z' - str[i] + 'a'; //formula, le restas a z(122) el numero ascii que le pases
 		if (str[i] >= 'A' && str[i] <= 'Z')
 			str[i] = 'Z' - str[i] + 'A';
 		write (1, &str[i], 1);

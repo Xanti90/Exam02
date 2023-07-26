@@ -6,7 +6,7 @@
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 10:59:36 by sajimene          #+#    #+#             */
-/*   Updated: 2023/07/19 16:00:03 by sajimene         ###   ########.fr       */
+/*   Updated: 2023/07/24 12:48:00 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,14 @@ void	rot_13(char *str)
 
 	i = 0;
 	while(str[i] != '\0')
-	if ((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <= 'M'))
-		str[i] = str[i] + 13;
-	else if ((str[i] >= 'n' && str[i] <= 'z') || (str[i] >= 'N' && str[i] <= 'Z'))
-		str[i] = str[i] - 13;
-	write(1, &str[i], 1);
-	i++;
+	{
+		if ((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <= 'M'))
+			str[i] = str[i] + 13;
+		else if ((str[i] >= 'n' && str[i] <= 'z') || (str[i] >= 'N' && str[i] <= 'Z'))
+			str[i] = str[i] - 13;
+		write(1, &str[i], 1);
+		i++;
+	}
 }
 
 int main(int argc, char **argv)

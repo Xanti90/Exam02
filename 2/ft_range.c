@@ -6,7 +6,7 @@
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 18:00:48 by sajimene          #+#    #+#             */
-/*   Updated: 2023/07/19 18:11:47 by sajimene         ###   ########.fr       */
+/*   Updated: 2023/07/19 18:13:50 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	*ft_range(int start, int end)
 	/*
     printf("The array contains %d elements:\n", size + 1);
 	*/
-    i = 0;
+    /*i = 0;
     while (i <= size)
     {
         printf("%d ", ptr[i]);
