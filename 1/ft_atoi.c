@@ -6,7 +6,7 @@
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 10:49:39 by sajimene          #+#    #+#             */
-/*   Updated: 2023/06/30 12:09:14 by sajimene         ###   ########.fr       */
+/*   Updated: 2023/08/02 18:19:28 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_atoi(const char *str)
 
 /*int main(void)
 {
-	char str[] = "  40";
+	char str[] = "  -+40";
 
 	printf("%d\n", ft_atoi(str));
 	printf("%d", atoi(str));

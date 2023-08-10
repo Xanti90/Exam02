@@ -6,7 +6,7 @@
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 08:39:30 by sajimene          #+#    #+#             */
-/*   Updated: 2023/06/30 09:35:55 by sajimene         ###   ########.fr       */
+/*   Updated: 2023/08/10 08:56:19 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	do_op(int n1, char ope, int n2)
 int main(int argc, char **argv)
 {
 	if (argc == 4)
-		do_op(atoi(argv[1]), *argv[1], atoi(argv[1]));
+		do_op(atoi(argv[1]), *argv[2], atoi(argv[3]));
 	printf("\n");
 	return (0);
 }
