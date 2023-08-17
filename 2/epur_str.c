@@ -6,7 +6,7 @@
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 12:02:01 by sajimene          #+#    #+#             */
-/*   Updated: 2023/07/17 14:58:45 by sajimene         ###   ########.fr       */
+/*   Updated: 2023/08/14 14:32:47 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void epur_str(char *str)
 			i++;
 		if (str[i - 1] == ' ' && i > j)
 			write(1, " ", 1);
-			i++;
+		i++;
 	}
 }
 
@@ -42,6 +42,6 @@ int main(int argc, char **argv)
 {
 	if (argc == 2)
 		epur_str(argv[1]);
-	write (1, "\n", 1);
+	write(1, "\n", 1);
 	return (0);
 }

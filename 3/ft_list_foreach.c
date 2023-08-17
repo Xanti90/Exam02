@@ -1,45 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strpbrk.c                                       :+:      :+:    :+:   */
+/*   ft_list_foreach.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/19 17:07:05 by sajimene          #+#    #+#             */
-/*   Updated: 2023/08/15 13:11:06 by sajimene         ###   ########.fr       */
+/*   Created: 2023/08/16 14:28:13 by sajimene          #+#    #+#             */
+/*   Updated: 2023/08/17 10:50:49 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
+#include "ft_list.h"
 
-char	*ft_strpbrk(const char *s1, const char *s2)
+void ft_list_foreach(t_list *begin_list, void (*f)(void *))
 {
-	int i;
-	int j;
+	t_list *list_ptr;
 
-	i = 0;
-	j = 0;
-	while (s1[i] != '\0')
+	list_ptr = begin_list;
+	while (list_ptr)
 	{
-		while (s2[j] != '\0')
-		{
-			if (s1[i] == s2[j])
-				return ((char *) &s1[i]);
-			j++;
-		}
-		i++;
+		(*f)(list_ptr->data);
+		list_ptr = list_ptr->next;
 	}
-	return (0);
 }
-
-/*int main(void)
-{
-	char s1[] = "hola caracola";
-	char s2[] = "r";
-
-	printf("%s\n", strpbrk(s1, s2));
-	printf("%s", ft_strpbrk(s1, s2));
-
-	return (0);
-}*/

@@ -6,7 +6,7 @@
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 08:33:17 by sajimene          #+#    #+#             */
-/*   Updated: 2023/08/10 08:39:20 by sajimene         ###   ########.fr       */
+/*   Updated: 2023/08/14 10:05:50 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void search_and_replace(char *str, char a, char b)
 	while (str[i] != '\0')
 	{
 		if (str[i] == a)
-				str[i] = b;
-			write(1, &str[i], 1);
-			i++;
+			str[i] = b;
+		write(1, &str[i], 1);
+		i++;
 	}
 }
 

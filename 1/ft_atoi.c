@@ -6,7 +6,7 @@
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 10:49:39 by sajimene          #+#    #+#             */
-/*   Updated: 2023/08/02 18:19:28 by sajimene         ###   ########.fr       */
+/*   Updated: 2023/08/11 12:25:32 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_atoi(const char *str)
 			result = result * 10 + (str[i] - '0');
 			i++;
 		}
-		return (result * neg); //Devuelve el resultado * por neg, garantiza que el número sea negativ si se encontro un '-'.
+		return (result * neg); //Devuelve el resultado * por neg, garantiza que el número sea negativo si se encontro un '-'.
 }
 
 /*int main(void)

@@ -1,45 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strpbrk.c                                       :+:      :+:    :+:   */
+/*   reverse_bits.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/19 17:07:05 by sajimene          #+#    #+#             */
-/*   Updated: 2023/08/15 13:11:06 by sajimene         ###   ########.fr       */
+/*   Created: 2023/08/17 16:13:22 by sajimene          #+#    #+#             */
+/*   Updated: 2023/08/17 17:05:05 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
-char	*ft_strpbrk(const char *s1, const char *s2)
+unsigned char reverse_bits(unsigned char octet)
 {
 	int i;
-	int j;
+	unsigned char res;
 
-	i = 0;
-	j = 0;
-	while (s1[i] != '\0')
+	i = 8;
+	res = 0;
+	while (i > 0)
 	{
-		while (s2[j] != '\0')
-		{
-			if (s1[i] == s2[j])
-				return ((char *) &s1[i]);
-			j++;
-		}
-		i++;
+		res = res * 2 + (octet % 2);
+		octet = octet / 2;
+		i--;
 	}
-	return (0);
+	return (res);
 }
-
-/*int main(void)
-{
-	char s1[] = "hola caracola";
-	char s2[] = "r";
-
-	printf("%s\n", strpbrk(s1, s2));
-	printf("%s", ft_strpbrk(s1, s2));
-
-	return (0);
-}*/

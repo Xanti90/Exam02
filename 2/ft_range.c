@@ -6,7 +6,7 @@
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 18:00:48 by sajimene          #+#    #+#             */
-/*   Updated: 2023/07/19 18:13:50 by sajimene         ###   ########.fr       */
+/*   Updated: 2023/08/16 12:02:55 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@ int	*ft_range(int start, int end)
 	int size;
 	int i;
 
-	i = 0;
 	size = 0;
-	if (start > end)
+	i = 0;
+	while (start > end)
 		size = (start - end);
-	if (end > start)
+	while (end > start)
 		size = (end - start);
-	ptr =malloc(sizeof(int) * (size + 1));
+	ptr = malloc(sizeof(int) * (size + 1));
 	if (ptr == NULL)
-			return (NULL);
+		return (NULL);
 	if (start >= end)
 	{
 		while (start >= end)
@@ -39,41 +39,12 @@ int	*ft_range(int start, int end)
 	}
 	else if (start <= end)
 	{
-		while (start <= end)
+		while (start >= end)
 		{
 			ptr[i] = start;
 			start++;
-			i++;
+			i--;
 		}
 	}
 	return (ptr);
 }
-
-/*int main()
-{
-    int start = 5;
-    int end = -6;
-    int *ptr;
-    int size, i;
-
-    ptr = ft_range(start, end);
-    if (ptr == NULL)
-        return 1;
-
-    if (start > end)
-        size = start - end;
-    else
-        size = end - start;
-	/*
-    printf("The array contains %d elements:\n", size + 1);
-	*/
-    /*i = 0;
-    while (i <= size)
-    {
-        printf("%d ", ptr[i]);
-        i++;
-    }
-    printf("\n");
-    free(ptr);
-    return 0;
-}*/

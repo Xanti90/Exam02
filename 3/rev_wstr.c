@@ -6,7 +6,7 @@
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 13:03:24 by sajimene          #+#    #+#             */
-/*   Updated: 2023/08/02 17:33:34 by sajimene         ###   ########.fr       */
+/*   Updated: 2023/08/15 11:14:28 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void rev_wstr(char *str)
 {
 	int i;
-	int start; //primera letra de la última palabra.
-	int end; //ultima letra de la última palabra.
-	int flag; //para gestionar el espacio de a última palabra que printeas.
+	int start;
+	int end;
+	int flag;
 
 	i = 0;
 	while (str[i])
-			i++;
+		i++;
 	while (i >= 0)
 	{
 		while (str[i] == '\0' || str[i] == ' ' || str[i] == '\t')
@@ -31,11 +31,9 @@ void rev_wstr(char *str)
 			i--;
 		start = i + 1;
 		flag = start;
-		while (start <= end)
-		{
+		while (start >= end)
 			write(1, &str[start], 1);
-			start++;
-		}
+		i++;
 		if (flag != 0)
 			write(1, " ", 1);
 	}

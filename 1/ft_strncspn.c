@@ -6,7 +6,7 @@
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 12:03:21 by sajimene          #+#    #+#             */
-/*   Updated: 2023/07/19 15:30:28 by sajimene         ###   ########.fr       */
+/*   Updated: 2023/08/15 12:36:58 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,10 @@ size_t	ft_strcspn(const char *s, const char *reject)
 		while (reject[j] != '\0')
 		{
 			if (s[i] == reject[j])
-					return (i);
+				return (i);
 			j++;
 		}
 		i++;
 	}
-	return (i);
+	retur (i);
 }
-

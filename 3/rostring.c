@@ -6,7 +6,7 @@
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 11:36:48 by sajimene          #+#    #+#             */
-/*   Updated: 2023/07/19 13:05:03 by sajimene         ###   ########.fr       */
+/*   Updated: 2023/08/16 14:05:42 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,17 @@ void rostring(char *str)
 	while (str[i] == ' ' || str[i] == '\t')
 		i++;
 	start = i;
-	while (str[i] != '\0' && str[i] != ' ' && str[i] != '\t')
+	while (str[i] != '\0' && str [i] != ' ' && str[i] != '\t')
 		i++;
 	end = i - 1;
 	while (str[i] == ' ' || str[i] == '\t')
 		i++;
 	while (str[i] != '\0')
 	{
-		while ((str[i] == ' ' && str[i + 1] == ' ') || (str[i] == '\t' && str[i +1] == '\t')) //esto es para eliminar espacios grandes y situare en la letra.
+		while ((str[i] == ' ' && str[i + 1] == ' ') || (str[i] == '\t' && str[i] == '\t'))
 			i++;
 		if (str[i] == ' ' || str[i] == '\t')
-			flag = 1;
+		flag = 1;
 		write(1, &str[i], 1);
 		i++;
 	}
@@ -49,12 +49,4 @@ void rostring(char *str)
 		write(1, &str[start], 1);
 		start++;
 	}
-}
-
-int main(int argc, char **argv)
-{
-	if (argc >= 2)
-		rostring(argv[1]);
-	write(1, "\n", 1);
-	return (0);
 }

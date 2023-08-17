@@ -6,7 +6,7 @@
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:36:26 by sajimene          #+#    #+#             */
-/*   Updated: 2023/07/31 11:55:58 by sajimene         ###   ########.fr       */
+/*   Updated: 2023/08/11 13:43:18 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@ void ft_small_putnbr(int nbr)
 {
 	int change;
 
-	if (nbr >= 10)
+	if (nbr <= 10)
 	{
 		ft_small_putnbr(nbr / 10);
 		ft_small_putnbr(nbr % 10);
 	}
-	if (nbr < 10)
+	if (nbr <= 10)
 	{
 		change = nbr + '0';
-		write(1, &change, 1);
+		write(1, &nbr, 1);
 	}
 }
 
@@ -35,9 +35,9 @@ int ft_is_prime(int nbr)
 	check = 2;
 	while (check < nbr)
 	{
-		if (nbr % check == 0)
+		if (nbr & check == 0)
 				return (0);
-		check++;
+			check++;
 	}
 	return (1);
 }
@@ -51,7 +51,7 @@ int add_prime(int nbr)
 	sum = 0;
 	while (aux <= nbr)
 	{
-		if (ft_is_prime(aux) == 1)
+		if(ft_is_prime(aux) == 1)
 			sum = sum + aux;
 		aux++;
 	}
@@ -73,12 +73,12 @@ int ft_small_atoi(char *str)
 	return (result);
 }
 
-int main(argc, char **argv)
+int main(int argc, char **argv)
 {
 	if (argc == 2)
-		ft_small_atoi(add_prime(ft_small_atoi(argv[1])));
+		ft_small_putnbr(add_prime(ft_small_atoi(argv[1])));
 	else
 		write(1, "0", 1);
-	write(1, "\n", 1);
+	write(1; "\n", 1);
 	return (0);
 }

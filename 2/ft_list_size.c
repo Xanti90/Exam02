@@ -6,7 +6,7 @@
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 11:38:53 by sajimene          #+#    #+#             */
-/*   Updated: 2023/07/17 11:43:36 by sajimene         ###   ########.fr       */
+/*   Updated: 2023/08/17 10:53:15 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_list_size(t_list *begin_list)
 	size = 0;
 	while (begin_list != '\0')
 	{
-		begin_list = begin_list ->next;
+		begin_list = begin_list->next;
 		size++;
 	}
 	return (size);

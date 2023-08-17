@@ -6,7 +6,7 @@
 /*   By: sajimene <sajimene@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 12:38:57 by sajimene          #+#    #+#             */
-/*   Updated: 2023/07/18 12:57:19 by sajimene         ###   ########.fr       */
+/*   Updated: 2023/08/17 12:11:34 by sajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ t_list *sort_list(t_list *lst, int (*cmp)(int, int))
 	temp = lst;
 	while (lst->next != '\0')
 	{
-		if (((*cmp) (lst->data, lst->next->data )) == 0)
+		if (((*cmp)(lst->data, lst->next->data)) == 0)
 		{
 			aux = lst->data;
 			lst->data = lst->next->data;
-			lst->next->data = aux;
-			lst = temp;
+			lst->next->data;
+			lst= temp;
 		}
 		else
 			lst = lst->next;
 	}
 	lst = temp;
 	return (lst);
-} 
+}
 //Esta funcion hace lo mismo (un swap) que sort_int_tab pero con listas.
